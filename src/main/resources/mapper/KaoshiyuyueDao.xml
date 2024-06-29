@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.KaoshiyuyueDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.KaoshiyuyueEntity" id="kaoshiyuyueMap">
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="shoujihaoma" column="shoujihaoma"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="kaoshikemu" column="kaoshikemu"/>
+        <result property="yuyueriqi" column="yuyueriqi"/>
+        <result property="beizhu" column="beizhu"/>
+        <result property="jiaolianzhanghao" column="jiaolianzhanghao"/>
+        <result property="jiaolianxingming" column="jiaolianxingming"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.KaoshiyuyueVO" >
+		SELECT * FROM kaoshiyuyue  kaoshiyuyue         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.KaoshiyuyueVO" >
+		SELECT  kaoshiyuyue.* FROM kaoshiyuyue  kaoshiyuyue 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.KaoshiyuyueView" >
+
+		SELECT  kaoshiyuyue.* FROM kaoshiyuyue  kaoshiyuyue 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.KaoshiyuyueView" >
+		SELECT * FROM kaoshiyuyue  kaoshiyuyue <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
